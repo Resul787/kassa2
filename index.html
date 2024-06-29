@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supermarket Kassa Sistemi</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Supermarket Kassa Sistemi</h1>
+
+      <div class="product-input">
+        <input
+          type="text"
+          id="product-name"
+          placeholder="Məhsul adını daxil edin"
+        />
+        <input type="text" id="barcode" placeholder="Barkodu skan edin" />
+        <button onclick="processProduct()">Məhsulu Əlavə Et</button>
+      </div>
+
+      <div class="receipt">
+        <h2>Qəbz</h2>
+        <div id="receipt-area"></div>
+      </div>
+
+      <div class="actions">
+        <button onclick="openCalculator()">Kalkulyator</button>
+        <button onclick="openRefundConfirmation()">Geri Qaytar</button>
+        <button onclick="printReceipt()">Qəbz Çap Et</button>
+      </div>
+
+      <div id="calculator-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeCalculator()">&times;</span>
+          <div class="calculator">
+            <input type="text" id="calc-display" readonly />
+            <div class="buttons">
+              <button onclick="appendToDisplay('7')">7</button>
+              <button onclick="appendToDisplay('8')">8</button>
+              <button onclick="appendToDisplay('9')">9</button>
+              <button onclick="appendToDisplay('+')">+</button>
+              <button onclick="appendToDisplay('4')">4</button>
+              <button onclick="appendToDisplay('5')">5</button>
+              <button onclick="appendToDisplay('6')">6</button>
+              <button onclick="appendToDisplay('-')">-</button>
+              <button onclick="appendToDisplay('1')">1</button>
+              <button onclick="appendToDisplay('2')">2</button>
+              <button onclick="appendToDisplay('3')">3</button>
+              <button onclick="clearDisplay()">C</button>
+              <button onclick="appendToDisplay('0')">0</button>
+              <button onclick="appendToDisplay('.')">.</button>
+              <button onclick="calculateTotal()">=</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
